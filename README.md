@@ -2,17 +2,15 @@
 
 **Anexo técnico de la tesis doctoral:** *Gobernanza de la IA en la Administración Tributaria en México*
 
-[![DOI](https://zenodo.org/badge/DOI/PENDIENTE.svg)](https://doi.org/PENDIENTE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20617923.svg)](https://doi.org/10.5281/zenodo.20617923)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
-
-> Reemplaza `PENDIENTE` por el DOI que Zenodo asigne al publicar (ver sección *Cómo depositar en Zenodo*).
 
 ---
 
 ## Resumen
 
-Este repositorio reúne el material empírico que ancla el argumento normativo de la tesis. Combina **dos modelos proxy con datos sintéticos** —que reproducen los *mecanismos* de la fiscalización algorítmica (scoring de riesgo individual y detección por grafos)— con un **análisis de datos reales y públicos del SAT** —que mide los *resultados* del procedimiento del artículo 69-B—. Mecanismo y resultado se sostienen mutuamente, conforme a la disciplina empírica del realismo bungeano.
+Este repositorio reúne el material empírico que ancla el argumento normativo de la tesis. Combina **dos modelos proxy con datos sintéticos** —que reproducen los *mecanismos* de la fiscalización algorítmica (scoring de riesgo individual y detección por grafos) con un **análisis de datos reales y públicos del SAT** que mide los *resultados* del procedimiento del artículo 69-B. Mecanismo y resultado se sostienen mutuamente.
 
 Las técnicas de explicabilidad (XAI) y de equidad algorítmica aplicadas en el modelo tabular (Parte I) demuestran cuatro proposiciones que sostienen el argumento normativo de la tesis:
 
@@ -78,10 +76,10 @@ Cada script imprime sus resultados y genera su panel de gráficas:
 
 ## Datos (carpeta `datos/`)
 
-- `Listado_completo_69-B.csv` — listado público del SAT (art. 69-B CFF), datos al 30 de abril de 2026.
-- `CSDsinefectos.csv` — listado público de Certificados de Sello Digital sin efectos (art. 17-H CFF).
-- `DOF_4to_parr.pdf` — listado global definitivo, DOF 5-jun-2026 (código 5789646).
-- `DOF_presuncion_69b_5jun26.pdf` — listado global de presunción, DOF 5-jun-2026 (código 5789645).
+- `Listado_completo_69-B.csv` - listado público del SAT (art. 69-B CFF), datos al 30 de abril de 2026.
+- `CSDsinefectos.csv` - listado público de Certificados de Sello Digital sin efectos (art. 17-H CFF).
+- `DOF_4to_parr.pdf` - listado global definitivo, DOF 5-jun-2026 (código 5789646).
+- `DOF_presuncion_69b_5jun26.pdf` - listado global de presunción, DOF 5-jun-2026 (código 5789645).
 
 > Son datos de carácter público conforme al artículo 69-B del CFF. Se incluyen para reproducibilidad; la fuente primaria es el Portal del SAT y el DOF.
 
@@ -107,88 +105,13 @@ modelo_proxy_sat_v2.py
 
 ---
 
-## Cómo depositar en Zenodo
-
-> La forma más simple de no olvidar ningún archivo es subir **todo el repositorio**. Si lo descargaste como `modelo-proxy-sat.zip`, descomprímelo y sube la carpeta completa (cualquiera de las dos opciones de abajo lo hace).
-
-### Opción A — Carga manual (rápida)
-
-1. Crea una cuenta en [zenodo.org](https://zenodo.org).
-2. *New upload* → arrastra **todos** los archivos del repositorio:
-
-   **Scripts (3):** `modelo_proxy_sat_v2.py`, `modelo_proxy_grafos.py`, `analisis_69b.py`
-   **Anexos Word (3):** `Anexo_I_Modelo_Proxy_v3.docx`, `Anexo_II_Analitica_Grafos_v2.docx`, `Anexo_III_Datos_Empiricos_v2.docx`
-   **Gráficas (5):** `graficas_modelo_proxy_v2.png`, `graficas_modelo_grafos.png`, `graficas_69b.png`, `graficas_69b_csd.png`
-   **Datos reales del SAT (carpeta `datos/`):** `Listado_completo_69-B.csv`, `CSDsinefectos.csv`, `DOF_4to_parr.pdf`, `DOF_presuncion_69b_5jun26.pdf`
-   **Metadatos y soporte:** `README.md`, `requirements.txt`, `LICENSE`, `CITATION.cff`, `.zenodo.json`
-
-3. Completa los metadatos (Zenodo puede pre-cargar parte desde `.zenodo.json` y `CITATION.cff`).
-4. *Publish* → Zenodo acuña el **DOI** de inmediato.
-
-> Zenodo conserva la estructura de carpetas, así que la subcarpeta `datos/` se preserva. Si la interfaz no permite arrastrar carpetas, súbela comprimida (`datos.zip`) o sube todo el repositorio como un único `.zip`.
-
-### Opción B — Integración GitHub ↔ Zenodo (recomendada para tu flujo)
-
-Aprovecha tu uso de GitHub y self-hosting. Archiva el repositorio **completo** (los tres scripts, los tres anexos, las cinco gráficas y la carpeta `datos/`) en un solo paso:
-
-1. Sube el repositorio a GitHub (ver *Publicar en GitHub* más abajo).
-2. En Zenodo → *Settings* → *GitHub* → activa el repositorio (toggle ON).
-3. En GitHub, crea un *Release*. Como el repositorio ya integra las tres partes (no solo el modelo tabular v2), usa una etiqueta que lo refleje, p. ej. **`v3.0.0`** ("modelo tabular + grafos + datos reales del 69-B").
-4. Zenodo archiva automáticamente ese release \u2014con todo su contenido, incluida la carpeta `datos/`\u2014 y acuña un DOI versionado.
-
-> **DOI de concepto vs. de versión:** Zenodo genera un *concept DOI* (siempre apunta a la última versión, ideal para citar en la tesis) y un *version DOI* por cada release. Cita el **concept DOI** en el cuerpo de la tesis.
-
-> **Sobre el tamaño:** la carpeta `datos/` pesa ~14 MB (los CSV del SAT y los dos PDF del DOF). Está muy por debajo del límite de Zenodo (50 GB por depósito), así que puede publicarse sin problema. Si prefieres un repositorio más ligero en GitHub, puedes excluir los CSV grandes ahí y subirlos solo a Zenodo; pero incluirlos en ambos es lo más reproducible.
-
-Una vez publicado, reemplaza `PENDIENTE` (en la insignia del DOI al inicio, en este texto y en la propuesta de cita) por el DOI real que asigne Zenodo.
-
----
-
-## Publicar en GitHub
-
-Comandos para subir el repositorio firmando los commits con tu llave GPG (`969C0614`):
-
-```bash
-cd modelo-proxy-sat
-git init
-git add .
-
-# Firmar los commits con tu llave GPG
-git config user.signingkey 969C0614
-git config commit.gpgsign true
-
-git commit -S -m "Anexo técnico: proxy tabular + grafos + análisis de datos reales del 69-B"
-git branch -M main
-
-# Crear el repositorio remoto y subirlo (requiere GitHub CLI)
-gh repo create modelo-proxy-sat --public --source=. --remote=origin --push
-
-# Crear el release que Zenodo archivará
-git tag -s v3.0.0 -m "v3.0.0 — tres partes (tabular, grafos, datos reales)"
-git push origin v3.0.0
-```
-
-Si no usas GitHub CLI (`gh`), crea el repositorio vacío en github.com y luego:
-
-```bash
-git remote add origin git@github.com:<usuario>/modelo-proxy-sat.git
-git push -u origin main
-git push origin v3.0.0
-```
-
-> Activa antes la integración en Zenodo (Opción B, paso 2) para que el release `v3.0.0` se archive y se acuñe el DOI de forma automática.
-
----
-
 ## Cómo citar
-
-> Sustituye los campos entre corchetes por tus datos reales antes de publicar.
 
 **APA 7 (software):**
 
-> [Apellido], D. (2026). *Modelo proxy de fiscalización algorítmica del SAT: Anexo técnico de la tesis "Gobernanza de la IA en la Administración Tributaria en México"* (Versión 3.0.0) [Software]. Zenodo. https://doi.org/[DOI]
+> Nieto Olvera, P. D. (2026). *Modelo proxy de fiscalización algorítmica del SAT: Anexo técnico de la tesis "Gobernanza de la IA en la Administración Tributaria en México"* (Versión 3.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.20617923
 
-**En el cuerpo de la tesis (cita en texto):** ([Apellido], 2026).
+**En el cuerpo de la tesis (cita en texto):** (Nieto Olvera, 2026).
 
 Véase también el archivo [`CITATION.cff`](CITATION.cff) para metadatos de cita legibles por máquina.
 
@@ -196,10 +119,5 @@ Véase también el archivo [`CITATION.cff`](CITATION.cff) para metadatos de cita
 
 ## Licencia
 
-Código distribuido bajo licencia [MIT](LICENSE). Si prefieres una licencia copyleft (GPL-3.0) o una licencia Creative Commons (CC-BY-4.0) para el conjunto del depósito, puedes sustituir el archivo `LICENSE` antes de publicar.
-
+Código distribuido bajo licencia [MIT](LICENSE). 
 ---
-
-## Reconocimiento metodológico
-
-Inspirado en el realismo científico de Mario Bunge (modelo CESM: Composición–Entorno–Estructura–Mecanismo). Las métricas de equidad siguen estándares de la literatura *Fairness in Machine Learning* (Barocas, Hardt & Narayanan, 2023) y la *four-fifths rule* (EEOC, 1978).
