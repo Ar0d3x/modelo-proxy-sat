@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "Si utiliza este software, por favor cítelo usando los siguientes metadatos."
+title: >-
+  Modelo proxy de fiscalización algorítmica del SAT:
+  Anexo técnico de la tesis "Gobernanza de la IA en la
+  Administración Tributaria en México"
+abstract: >-
+  Modelo proxy que simula un sistema de fiscalización algorítmica
+  con datos sintéticos y aplica técnicas de explicabilidad (XAI) y
+  equidad algorítmica para demostrar empíricamente la viabilidad de
+  la explicabilidad, la naturaleza electiva de la opacidad, la
+  detectabilidad y persistencia del sesgo algorítmico, y la
+  operacionalización de obligaciones normativas para una agencia
+  supervisora (ASAT). Marco metodológico: realismo científico
+  bungeano (modelo CESM). Datos sintéticos.
+type: software
+version: 2.0.0
+date-released: "2026-06-04"
+license: MIT
+language: spa
+authors:
+  - given-names: David
+    family-names: "[Apellido]"
+    affiliation: "[Universidad / Programa de Doctorado en Derecho]"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+keywords:
+  - inteligencia artificial
+  - administración tributaria
+  - SAT
+  - fiscalización algorítmica
+  - explicabilidad
+  - equidad algorítmica
+  - discriminación indirecta
+  - derechos humanos
+  - derecho fiscal
+  - México
+  - realismo científico
+  - Mario Bunge
+# identifiers:
+#   - type: doi
+#     value: "10.5281/zenodo.PENDIENTE"
+#     description: "DOI de concepto (Zenodo)"

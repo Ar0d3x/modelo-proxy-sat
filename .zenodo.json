@@ -1,0 +1,32 @@
+{
+  "title": "Modelo proxy de fiscalización algorítmica del SAT: Anexo técnico de la tesis \"Gobernanza de la IA en la Administración Tributaria en México\"",
+  "description": "<p>Modelo proxy que simula un sistema de fiscalización algorítmica (scoring de riesgo fiscal) con datos sintéticos, y aplica técnicas de explicabilidad (XAI) y de equidad algorítmica para demostrar empíricamente cuatro proposiciones que sostienen el argumento normativo de una tesis doctoral en Derecho.</p><p><strong>P1:</strong> la fiscalización algorítmica puede ser explicable sin sacrificar desempeño (Glass Box vs. Black Box, brecha de AUC aprox. 0.06). <strong>P2:</strong> la opacidad es una elección, no una necesidad técnica. <strong>P3:</strong> el sesgo algorítmico es estructural, medible (razón de impacto dispar = 0.37, regla de los 4/5) y persiste aun eliminando la variable protegida (discriminación indirecta vía variables proxy). <strong>P4:</strong> las obligaciones normativas propuestas para una Agencia Supervisora de Algoritmos Tributarios (ASAT) son operacionalizables.</p><p><strong>Advertencia metodológica:</strong> los datos son sintéticos (proceso generador logit con semilla fija). Demuestran la viabilidad del método y la detectabilidad de los patrones, no el comportamiento real del SAT. Marco metodológico: realismo científico bungeano (modelo CESM).</p>",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "language": "spa",
+  "version": "2.0.0",
+  "creators": [
+    {
+      "name": "[Apellido], David",
+      "affiliation": "[Universidad / Programa de Doctorado en Derecho]",
+      "orcid": ""
+    }
+  ],
+  "keywords": [
+    "inteligencia artificial",
+    "administración tributaria",
+    "SAT",
+    "fiscalización algorítmica",
+    "explicabilidad",
+    "XAI",
+    "equidad algorítmica",
+    "discriminación indirecta",
+    "derechos humanos",
+    "derecho fiscal",
+    "México",
+    "realismo científico",
+    "Mario Bunge"
+  ],
+  "notes": "Anexo técnico digital de tesis doctoral. Código reproducible (semilla fija). Reemplazar los campos entre corchetes y el ORCID antes de publicar."
+}
