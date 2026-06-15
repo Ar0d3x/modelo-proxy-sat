@@ -6,6 +6,25 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
 
+
+## 🔬 Proyecto de investigación
+
+Este anexo forma parte del proyecto de investigación doctoral registrado en el **Open Science Framework (OSF)**:
+
+> **Gobernanza de la IA en la Administración Tributaria en México**  
+> 📂 OSF: https://osf.io/cxwjt  
+> 🆔 DOI: [10.17605/OSF.IO/CXWJT](https://doi.org/10.17605/OSF.IO/CXWJT)
+
+Ecosistema completo de la investigación:
+
+| Componente | Plataforma | Enlace |
+|---|---|---|
+| Proyecto de investigación | OSF | [osf.io/cxwjt](https://osf.io/cxwjt) |
+| Anexo técnico (este repo) | Zenodo + GitHub | [DOI](https://doi.org/10.5281/zenodo.20617924) |
+| Tracker EFOS/EDOS en vivo | GitHub | [sat-efos-tracker](https://github.com/Ar0d3x/sat-efos-tracker) |
+| Análisis del listado 69-B | GitHub | [Analisis_Contribuyentes_69B_SAT](https://github.com/Ar0d3x/Analisis_Contribuyentes_69B_SAT) |
+
+---
 ---
 
 ## Resumen
@@ -119,5 +138,5 @@ Véase también el archivo [`CITATION.cff`](CITATION.cff) para metadatos de cita
 
 ## Licencia
 
-Código distribuido bajo licencia [MIT](LICENSE). 
+Distribuido bajo licencia [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE). 
 ---
