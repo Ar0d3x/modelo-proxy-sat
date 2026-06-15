@@ -3,7 +3,7 @@
 **Anexo técnico de la tesis doctoral:** *Gobernanza de la IA en la Administración Tributaria en México*
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20617923.svg)](https://doi.org/10.5281/zenodo.20617923)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
 
 ---
