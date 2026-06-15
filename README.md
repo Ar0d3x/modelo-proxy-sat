@@ -2,7 +2,7 @@
 
 **Anexo técnico de la tesis doctoral:** *Gobernanza de la IA en la Administración Tributaria en México*
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20617923.svg)](https://doi.org/10.5281/zenodo.20617923)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20617924.svg)](https://doi.org/10.5281/zenodo.20617924)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
 
@@ -109,7 +109,7 @@ modelo_proxy_sat_v2.py
 
 **APA 7 (software):**
 
-> Nieto Olvera, P. D. (2026). *Modelo proxy de fiscalización algorítmica del SAT: Anexo técnico de la tesis "Gobernanza de la IA en la Administración Tributaria en México"* (Versión 3.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.20617923
+> Nieto Olvera, P. D. (2026). *Modelo proxy de fiscalización algorítmica del SAT: Anexo técnico de la tesis "Gobernanza de la IA en la Administración Tributaria en México"* (Versión 3.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.20617924
 
 **En el cuerpo de la tesis (cita en texto):** (Nieto Olvera, 2026).
 
