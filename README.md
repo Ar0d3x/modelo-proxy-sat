@@ -95,14 +95,47 @@ Cada script imprime sus resultados y genera su panel de gráficas:
 
 ## Datos (carpeta `datos/`)
 
-- `Listado_completo_69-B.csv` - listado público del SAT (art. 69-B CFF), datos al 30 de abril de 2026.
-- `CSDsinefectos.csv` - listado público de Certificados de Sello Digital sin efectos (art. 17-H CFF).
-- `DOF_4to_parr.pdf` - listado global definitivo, DOF 5-jun-2026 (código 5789646).
-- `DOF_presuncion_69b_5jun26.pdf` - listado global de presunción, DOF 5-jun-2026 (código 5789645).
+### Archivos incluidos en el repositorio (reproducibilidad)
 
-> Son datos de carácter público conforme al artículo 69-B del CFF. Se incluyen para reproducibilidad; la fuente primaria es el Portal del SAT y el DOF.
+Estos archivos son el **corte acumulado al 30 de abril de 2026** que sustenta los resultados citados en la tesis (14,244 RFC únicos):
 
----
+- `Listado_completo_69-B.csv` — listado público **acumulado** del SAT (art. 69-B CFF). 14,424 filas / 14,244 RFC únicos tras des-duplicar (`keep='last'`).
+- `CSDsinefectos.csv` — listado público de Certificados de Sello Digital sin efectos (art. 17-H CFF).
+
+> ⚠️ **Snapshot histórico.** El SAT solo publica el listado *vigente*, no versiones anteriores. Estos archivos se incluyen para garantizar la reproducibilidad exacta de los números de la tesis; el listado en línea del SAT diferirá de este corte porque se actualiza de forma continua.
+
+### Acumulado (SAT) vs. incremental (DOF)
+
+Es clave distinguir dos cosas que **no son equivalentes**:
+
+- **El CSV del SAT es acumulado:** contiene a *todos* los contribuyentes en cada situación a una fecha de corte. Es la "foto completa" al 30-abr-2026.
+- **Los oficios del DOF son incrementales:** cada publicación agrega *únicamente* los contribuyentes nuevos de ese acto; no reproduce el acumulado. El listado completo es la suma histórica de todas las publicaciones incrementales del DOF.
+
+**La fuente con validez jurídica es el DOF.** El portal de datos abiertos del SAT ([contribuyentes_publicados](https://www.sat.gob.mx/minisitio/DatosAbiertos/contribuyentes_publicados.html)) es una referencia operativa consolidada que puede diferir del Diario Oficial.
+
+### Oficios incrementales de referencia (DOF 5-jun-2026)
+
+Publicaciones incrementales posteriores al corte de datos del anexo, citadas como ejemplo del procedimiento del art. 69-B:
+
+| Oficio | Etapa | Fecha oficio | Contrib. | DOF |
+|---|---|---|---|---|
+| 500-05-2026-11484 | Presunción (párr. 1°) | 08-abr-2026 | 64 | [nota 5789645](https://dof.gob.mx/nota_detalle.php?codigo=5789645&fecha=05/06/2026) |
+| 500-05-00-00-00-2026-11587 | Definitivo — no aportaron pruebas (párr. 4°) | 15-abr-2026 | 89 | [nota 5789646](https://dof.gob.mx/nota_detalle.php?codigo=5789646&fecha=05/06/2026) |
+| 500-05-00-00-00-2026-15917 | Definitivo — aportaron pero no desvirtuaron (párr. 4°) | 24-abr-2026 | 26 | [nota 5789647](https://dof.gob.mx/nota_detalle.php?codigo=5789647&fecha=05/06/2026) |
+
+### Los plazos del procedimiento (según los propios oficios y criterios)
+
+El art. 69-B CFF distingue plazos que conviene no confundir:
+
+* **15 días hábiles** — para que el presunto EFOS aporte pruebas y desvirtúe, contados desde que surte efectos la última notificación (párr. 2°).
+* **50 días hábiles** — plazo perentorio para que la autoridad valore las pruebas y notifique la resolución definitiva; si el SAT no lo hace en este tiempo, la presunción queda sin efectos (párr. 4°).
+* **40 días hábiles** — plazo para que el contribuyente presente su aclaración (Regla 2.2.4 de la RMF 2026) ante una restricción provisional preventiva de su Certificado de Sello Digital (Art. 17-H Bis CFF).
+* **30 días hábiles** — plazo mínimo que la autoridad debe esperar tras notificar la resolución definitiva antes de publicar el listado (párr. 4°).
+* **30 días** — para que el EDOS (quien dedujo los comprobantes) acredite materialidad o corrija su situación. El criterio sustantivo 8/2018/CTN/CS-SASEN de Prodecon señala como uno de los momentos para desvirtuar los 30 días siguientes a la publicación del listado definitivo (párr. 5°).
+
+> **Nota jurisprudencial relevante:** el amparo en revisión 165/2023 (Primer Tribunal Colegiado en Materia Administrativa del Decimosexto Circuito, DOF 5-abr-2024) resolvió que el cómputo de esos 30 días para el EDOS debe iniciar a partir de la notificación personal al contribuyente afectado —no de la mera publicación del listado en el DOF—, en observancia a la garantía de audiencia del artículo 14 constitucional, pues la publicación no genera certeza de un emplazamiento real.
+
+> Datos de carácter público conforme al art. 69-B del CFF. La fuente primaria y jurídicamente válida es el DOF; el portal del SAT es referencia operativa que puede diferir.
 
 ## Estructura del modelo
 
