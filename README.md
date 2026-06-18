@@ -29,7 +29,7 @@ Ecosistema completo de la investigación:
 
 ## Resumen
 
-Este repositorio reúne el material empírico que ancla el argumento normativo de la tesis. Combina **dos modelos proxy con datos sintéticos** —que reproducen los *mecanismos* de la fiscalización algorítmica (scoring de riesgo individual y detección por grafos) con un **análisis de datos reales y públicos del SAT** que mide los *resultados* del procedimiento del artículo 69-B. Mecanismo y resultado se sostienen mutuamente.
+Este repositorio reúne el material empírico que ancla el argumento normativo de la tesis. Combina **dos modelos proxy con datos sintéticos** que reproducen los *mecanismos* de la fiscalización algorítmica (scoring de riesgo individual y detección por grafos) con un **análisis de datos reales y públicos del SAT** que mide los *resultados* del procedimiento del artículo 69-B. Mecanismo y resultado se sostienen mutuamente.
 
 Las técnicas de explicabilidad (XAI) y de equidad algorítmica aplicadas en el modelo tabular (Parte I) demuestran cuatro proposiciones que sostienen el argumento normativo de la tesis:
 
@@ -40,7 +40,7 @@ Las técnicas de explicabilidad (XAI) y de equidad algorítmica aplicadas en el 
 | **P3** | El sesgo algorítmico es estructural, medible y persistente | Razón de impacto dispar = 0.37 (regla de los 4/5); persiste aun eliminando la variable de sector |
 | **P4** | Las obligaciones normativas propuestas son operacionalizables | Métricas de equidad, monotonicidad y umbral definidas como criterios verificables para la ASAT |
 
-> **Marco metodológico:** realismo científico bungeano (modelo CESM). Toda afirmación normativa de la tesis se ancla a una proposición empírica reproducible.
+> **Marco metodológico:** Modelo CESM. Toda afirmación normativa de la tesis se ancla a una proposición empírica reproducible.
 
 ---
 
@@ -48,7 +48,7 @@ Las técnicas de explicabilidad (XAI) y de equidad algorítmica aplicadas en el 
 
 El repositorio usa **dos tipos de datos**, con alcances distintos:
 
-- **Partes I y II (datos sintéticos):** generados mediante un proceso logit explícito con semilla fija. **No** miden el comportamiento real del SAT, cuyos microdatos de scoring no son de acceso público —circunstancia que, en sí misma, ilustra el problema de opacidad que la tesis denuncia. Demuestran la **viabilidad** de la auditoría algorítmica y la **detectabilidad** de los patrones de sesgo con herramientas estándar.
+- **Partes I y II (datos sintéticos):** generados mediante un proceso logit explícito con semilla fija. **No** miden el comportamiento real del SAT, cuyos microdatos de scoring no son de acceso público, circunstancia que, en sí misma, ilustra el problema de opacidad que la tesis señala. Demuestran la **viabilidad** de la auditoría algorítmica y la **detectabilidad** de los patrones de sesgo con herramientas estándar.
 - **Parte III (datos reales y públicos):** el listado del artículo 69-B y el de Certificados de Sello Digital sin efectos, ambos de carácter público conforme al CFF. Sí miden un resultado real del procedimiento (tasa de revocación, vía de corrección, impacto de la cancelación de sellos).
 
 La medición empírica del *sistema de scoring* real seguiría requiriendo acceso a los datos internos del SAT, acceso que la reforma propuesta busca habilitar para la Agencia Supervisora de Algoritmos Tributarios (ASAT).
@@ -135,7 +135,7 @@ El art. 69-B CFF distingue plazos que conviene no confundir:
 * **10 días hábiles (+10 de prórroga)** — plazo con el que cuenta el EDOS para desahogar requerimientos de información o documentación adicional que la autoridad emita para resolver el caso. La prórroga se debe solicitar dentro de los 10 días iniciales (Regla 2.9.18, párr. 2°).
 * **30 días hábiles** — plazo máximo con el que cuenta la autoridad para dictar la resolución definitiva del EDOS, contados a partir de que se presenta la solicitud de aclaración o se tiene por cumplido el requerimiento adicional (Regla 2.9.18, párr. 4°).
 
-> **Nota relevante:** el amparo en revisión 165/2023 (Primer Tribunal Colegiado en Materia Administrativa del Decimosexto Circuito, resolvió que el cómputo de esos 30 días para el EDOS debe iniciar a partir del día siguiente en que surte efectos la notificación personal al contribuyente afectado —no de la mera publicación del listado en el DOF—, en observancia a la garantía de audiencia del artículo 14 constitucional, pues la publicación no genera certeza de un emplazamiento real.
+> **Nota relevante:** el amparo en revisión 165/2023 del Primer Tribunal Colegiado en Materia Administrativa del Decimosexto Circuito, resolvió que el cómputo de esos 30 días para el EDOS debe iniciar a partir del día siguiente en que surte efectos la notificación personal al contribuyente afectado —no de la mera publicación del listado en el DOF—, en observancia a la garantía de audiencia del artículo 14 constitucional, pues la publicación no genera certeza de un emplazamiento real.
 
 > Datos de carácter público conforme al art. 69-B del CFF. La fuente primaria y jurídicamente válida es el DOF; el portal del SAT es referencia operativa que puede diferir.
 
@@ -156,16 +156,29 @@ modelo_proxy_sat_v2.py
 ├── Experimento contrafáctico (sin variable de sector)
 └── Análisis del umbral de decisión
 ```
+## Referencias técnicas
 
+El encuadre de las técnicas reproducidas en este anexo se apoya en la literatura de referencia de cada campo:
+
+- **Parte I (modelo tabular):** equidad algorítmica y explicabilidad (XAI) sobre datos estructurados; la razón de impacto dispar (regla de los 4/5) sigue el criterio de la EEOC.
+- **Parte II (analítica de grafos):** detección de anomalías y fraude sobre grafos (*graph-based anomaly detection*). El análisis estructural de redes tiene su formulación en Wasserman y Faust (1994). El fenómeno de *culpabilidad por asociación* (*guilt-by-association*) que el modelo reproduce (la propagación de la señal de riesgo a través de los enlaces, con independencia de la conducta individual del nodo) está documentado como propiedad estructural del método en Akoglu et al. (2015). Cuando estas técnicas incorporan aprendizaje sobre la topología de la red, se inscriben en las Redes Neuronales de Grafos (*Graph Neural Networks*, GNN), subcategoría del aprendizaje profundo sistematizada en Wu et al. (2021).
+
+> El SAT ha confirmado públicamente el uso de "analítica de grafos" y "análisis de redes", pero no ha especificado el tipo del modo de empleo de arquitecturas GNN en particular. Este anexo reproduce el *tipo* de mecanismo, no un modelo concreto atribuido al SAT.
+
+**Bibliografía técnica:**
+
+- Akoglu, L., Tong, H., & Koutra, D. (2015). Graph based anomaly detection and description: A survey. *Data Mining and Knowledge Discovery, 29*(3), 626–688. https://doi.org/10.1007/s10618-014-0365-y
+- Wasserman, S., & Faust, K. (1994). *Social network analysis: Methods and applications*. Cambridge University Press.
+- Wu, Z., Pan, S., Chen, F., Long, G., Zhang, C., & Yu, P. S. (2021). A comprehensive survey on graph neural networks. *IEEE Transactions on Neural Networks and Learning Systems, 32*(1), 4–24. https://doi.org/10.1109/TNNLS.2020.2978386
+
+---
 ---
 
 ## Cómo citar
 
 **APA 7 (software):**
 
-> Nieto Olvera, P. D. (2026). *Modelo proxy de fiscalización algorítmica del SAT: Anexo técnico de la tesis "Gobernanza de la IA en la Administración Tributaria en México"* (Versión 3.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.20617924
-
-**En el cuerpo de la tesis (cita en texto):** (Nieto Olvera, 2026).
+> Nieto Olvera, P.D. (2026). *Modelo proxy de fiscalización algorítmica del SAT: Anexo técnico de la tesis "Gobernanza de la IA en la Administración Tributaria en México"* (Versión 3.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.20617924
 
 Véase también el archivo [`CITATION.cff`](CITATION.cff) para metadatos de cita legibles por máquina.
 
